@@ -58,6 +58,7 @@ INSERT INTO lieu VALUES (7,'Océan Atlantique',-1.3225897148440247,-28.866028191
 INSERT INTO lieu VALUES (8,'Lune',null,null);
 INSERT INTO lieu VALUES (9,'Mars',null,null);
 
+
 INSERT INTO forfait VALUES (null,1,25,20,'abonnement mensuel',5,1,'normal');
 INSERT INTO forfait VALUES (null,1,25,20,'abonnement mensuel',5,3,'normal');
 INSERT INTO forfait VALUES (null,1,50,150,'abonnement mensuel',10,1,'normal');
@@ -81,3 +82,109 @@ f.idLieu,l.longitude,l.latitude
 from forfait f join lieu l on f.idLieu = l.id join typeForfait t on t.id = f.idType
 );
 
+CREATE TABLE typeDonne(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nom varchar(100)
+);
+
+CREATE TABLE forfaitDetails(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idForfait int,
+    idTypeDonne int
+);
+
+ALTER TABLE forfaitDetails ADD CONSTRAINT `forfaitDetails_fk`   
+    FOREIGN KEY(idForfait) REFERENCES forfait (id) ON DELETE  CASCADE;  
+    ALTER TABLE forfaitDetails ADD CONSTRAINT `forfaitDetails1_fk`   
+    FOREIGN KEY(idTypeDonne) REFERENCES typeDonne (id) ON UPDATE CASCADE;  
+
+
+INSERT INTO typeDonne VALUES (null,'vidéo');
+INSERT INTO typeDonne VALUES (null,'photo');
+INSERT INTO typeDonne VALUES (null,'son');
+INSERT INTO typeDonne VALUES (null,'3D');
+
+INSERT INTO forfaitDetails VALUES (null, 2 ,1);
+INSERT INTO forfaitDetails VALUES (null, 3 ,1);
+INSERT INTO forfaitDetails VALUES (null, 4 ,1);
+INSERT INTO forfaitDetails VALUES (null, 5 ,1);
+INSERT INTO forfaitDetails VALUES (null, 6 ,1);
+INSERT INTO forfaitDetails VALUES (null, 7 ,1);
+INSERT INTO forfaitDetails VALUES (null, 8 ,1);
+INSERT INTO forfaitDetails VALUES (null, 9 ,1);
+INSERT INTO forfaitDetails VALUES (null, 10 ,1);
+INSERT INTO forfaitDetails VALUES (null, 11 ,1);
+INSERT INTO forfaitDetails VALUES (null, 12 ,1);
+INSERT INTO forfaitDetails VALUES (null, 13 ,1);
+INSERT INTO forfaitDetails VALUES (null, 14 ,1);
+INSERT INTO forfaitDetails VALUES (null, 15 ,1);
+
+
+INSERT INTO forfaitDetails VALUES (null, 2 ,2);
+INSERT INTO forfaitDetails VALUES (null, 3 ,2);
+INSERT INTO forfaitDetails VALUES (null, 4 ,2);
+INSERT INTO forfaitDetails VALUES (null, 5 ,2);
+INSERT INTO forfaitDetails VALUES (null, 6 ,2);
+INSERT INTO forfaitDetails VALUES (null, 7 ,2);
+INSERT INTO forfaitDetails VALUES (null, 8 ,2);
+INSERT INTO forfaitDetails VALUES (null, 9 ,2);
+INSERT INTO forfaitDetails VALUES (null, 10 ,2);
+INSERT INTO forfaitDetails VALUES (null, 11 ,2);
+INSERT INTO forfaitDetails VALUES (null, 12 ,2);
+INSERT INTO forfaitDetails VALUES (null, 13 ,2);
+INSERT INTO forfaitDetails VALUES (null, 14 ,2);
+INSERT INTO forfaitDetails VALUES (null, 15 ,2);
+
+
+INSERT INTO forfaitDetails VALUES (null, 2 ,3);
+INSERT INTO forfaitDetails VALUES (null, 3 ,3);
+INSERT INTO forfaitDetails VALUES (null, 4 ,3);
+INSERT INTO forfaitDetails VALUES (null, 5 ,3);
+INSERT INTO forfaitDetails VALUES (null, 6 ,3);
+INSERT INTO forfaitDetails VALUES (null, 7 ,3);
+INSERT INTO forfaitDetails VALUES (null, 8 ,3);
+INSERT INTO forfaitDetails VALUES (null, 9 ,3);
+INSERT INTO forfaitDetails VALUES (null, 10 ,3);
+INSERT INTO forfaitDetails VALUES (null, 11 ,3);
+INSERT INTO forfaitDetails VALUES (null, 12 ,3);
+INSERT INTO forfaitDetails VALUES (null, 13 ,3);
+INSERT INTO forfaitDetails VALUES (null, 14 ,3);
+INSERT INTO forfaitDetails VALUES (null, 15 ,3);
+
+INSERT INTO forfaitDetails VALUES (null, 12 ,4);
+INSERT INTO forfaitDetails VALUES (null, 13 ,4);
+INSERT INTO forfaitDetails VALUES (null, 14 ,4);
+INSERT INTO forfaitDetails VALUES (null, 15 ,4);
+
+CREATE TABLE user(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email varchar(100),
+    mdp varchar(100)
+);
+
+CREATE TABLE commande (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    qte int,
+    idForfait int,
+    dateHeureCommande timestamp,
+    idUser int
+);
+
+ALTER TABLE commande ADD CONSTRAINT `commande_fk`   
+    FOREIGN KEY(idForfait) REFERENCES forfait (id) ON DELETE  CASCADE;  
+
+ALTER TABLE commande ADD CONSTRAINT `commande1_fk`   
+    FOREIGN KEY(idUser) REFERENCES user (id) ON DELETE  CASCADE;  
+
+CREATE TABLE paiement (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idCommande int,
+    dateHeurePaiement timestamp,
+    type varchar(100)
+);
+
+ALTER TABLE paiement ADD CONSTRAINT `paiement_fk`   
+    FOREIGN KEY(idCommande) REFERENCES commande (id) ON DELETE  CASCADE;  
+
+
+INSERT INTO user VALUES (null,'rabe@gmail.com','motdepasse');
