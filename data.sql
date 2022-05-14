@@ -76,6 +76,11 @@ INSERT INTO forfait VALUES (null,4,750,35,'payement à vie',20,8,'premium');
 INSERT INTO forfait VALUES (null,4,1500,80,'payement à vie',20,9,'premium');
 INSERT INTO forfait VALUES (null,4,999,30,'payement à vie',20,9,'premium');
 
+create view vueForfait as (
+select f.id,f.prix,f.tailleMin, t.nom as nomType,l.nom as nomLieu,f.prixAdd,f.nom as nomForfait, f.idType,
+f.idLieu,l.longitude,l.latitude
+from forfait f join lieu l on f.idLieu = l.id join typeForfait t on t.id = f.idType
+);
 
 CREATE TABLE typeDonne(
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
