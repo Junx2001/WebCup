@@ -20,6 +20,7 @@ class ForfaitCtrl extends CI_Controller {
             'view' => 'listeForfait',
             'forfaits' => $this->Forfait->getForfaits()
         );
+        $this->load->view('bo_login',$data);
     }
 
      // fiche d'un forfait
@@ -30,6 +31,7 @@ class ForfaitCtrl extends CI_Controller {
             'view' => 'ficheForfait',
             'fiche' => $this->Forfait->getForfait($id)
         );
+        $this->load->view('bo_login',$data);
     }
 
     // liste des résultats de recherche
@@ -44,6 +46,7 @@ class ForfaitCtrl extends CI_Controller {
             'view' => 'listeForfait',
             'forfaits' => $this->Forfait->rechercheForfaits($taille,$prix,$idType,$pays)
         );
+        $this->load->view('bo_login',$data);
     }
 
     // le dépôt le plus proche d'une coordonnée
@@ -55,6 +58,7 @@ class ForfaitCtrl extends CI_Controller {
             'view' => 'listeForfait',
             'forfaits' => $this->Forfait->getProximite($long,$lat)
         );
+        $this->load->view('bo_login',$data);
         
     }
 			

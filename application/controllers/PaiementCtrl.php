@@ -17,10 +17,19 @@ class PaiementCtrl extends CI_Controller {
     public function allPaiements(){
         $this->load->model('Paiement');
         $data = array(
-            'view' => 'listePaiement',
+            'view' => 'fo_paiement',
             'forfaits' => $this->Paiement->getPaiements()
         );
+        $this->load->view('fo_paiement');
     }
 
+    // insertion paiement
+    public function payer(){
+        $idCommande = $this->input->post('idCommande');
+        $typeDevise = $this->input->post('type');
+        $this->load->model('Paiement');
+        $this->Paiement->payerCommande($idCommande,$typeDevise);
+
+    }
 			
 }
