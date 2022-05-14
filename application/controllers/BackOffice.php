@@ -9,10 +9,10 @@ class BackOffice extends CI_Controller {
 	{
 		parent::__construct();
 
-        /*if($this->session->userdata('user')==null)
+        if($this->session->userdata('user')==null)
         {
             redirect('LoginBackOffice/login');
-        }*/
+        }
 
 		$this->load->database();
 		$this->load->helper('url');
@@ -59,8 +59,7 @@ class BackOffice extends CI_Controller {
 		try{
 			$crud = new grocery_CRUD();
 
-			$crud->set_theme('flexigrid');
-			$crud->set_table('Lieu');
+			$crud->set_table('lieu');
 			$crud->set_subject('Lieu');
 			$crud->required_fields('nom','longitude','latitude');
 			$crud->columns('nom','longitude','latitude');
