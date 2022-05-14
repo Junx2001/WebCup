@@ -24,7 +24,7 @@
                                 <h4 class="card-title">CRUD Forfait</h4>
                             </div>
                             <div class="card-body">
-                            <?php echo $tableau; ?>
+                            <?php echo $crud['output']; ?>
                         </div>
                     </section>
                 </div>

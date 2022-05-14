@@ -17,6 +17,14 @@ if (empty($view)){
     <link rel="stylesheet" href="<?php echo site_url() ; ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo site_url() ; ?>assets/css/app.css">
     <link rel="shortcut icon" href="<?php echo site_url() ; ?>assets/images/favicon.svg" type="image/x-icon">
+
+    
+    <?php 
+
+foreach($crud['css_files'] as $file): ?>
+	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+<?php endforeach;
+ ?>
 </head>
 
 <body>
@@ -446,10 +454,6 @@ if (empty($view)){
             </header>
             
             <?php 
-              if(isset($crud))
-              {
-                $tableau = $crud;
-              }
               
             
             
@@ -464,6 +468,12 @@ if (empty($view)){
     <script src="<?php echo site_url() ; ?>assets/js/bootstrap.bundle.min.js"></script>
 
     <script src="<?php echo site_url() ; ?>assets/js/main.js"></script>
+    <?php 
+        foreach($crud['js_files'] as $file):
+     ?>
+        <script src="<?php echo $file; ?>"></script>
+    <?php endforeach;
+?>
 
 
 </body></html>
