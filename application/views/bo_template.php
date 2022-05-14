@@ -445,7 +445,18 @@ if (empty($view)){
                 </nav>
             </header>
             
-            <?php include $view.'.php' ; ?>
+            <?php 
+              if(isset($crud))
+              {
+                $tableau = $crud;
+              }
+              
+            
+            
+            include $view.'.php' ;
+          
+            
+            ?>
 
         </div>
     </div>

@@ -22,15 +22,15 @@ class BackOffice extends CI_Controller {
 	}
 	
 	public function index(){
-		$data = array('view'=> 'accueil');
-        $this->load->view('template',$data);
+		redirect('BackOffice/crudForfait');
 	}
 
 
 
 	public function _example_output($output = null)
 	{
-		$this->load->view('bo_liste.php',(array)$output);
+        $data = array('view' => 'bo_crudForfait', 'crud' => (array)$output);
+		$this->load->view('bo_template.php',$data);
 	}
 
 
