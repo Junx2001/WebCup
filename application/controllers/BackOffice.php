@@ -9,16 +9,21 @@ class BackOffice extends CI_Controller {
 	{
 		parent::__construct();
 
-        /*if($this->session->userdata('user')==null)
+        if($this->session->userdata('admin')==null)
         {
             redirect('LoginBackOffice/login');
-        }*/
+        }
 
 		$this->load->database();
 		$this->load->helper('url');
 
 		$this->load->library('grocery_CRUD');
 
+	}
+	
+	public function index(){
+		$data = array('view'=> 'accueil');
+        $this->load->view('template',$data);
 	}
 
 
@@ -72,7 +77,7 @@ class BackOffice extends CI_Controller {
 
     public function logout()
 	{
-        $this->session->unset_userdata('user');
+        $this->session->unset_userdata('admin');
         redirect('LoginBackOffice/login');
 	}
    

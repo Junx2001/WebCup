@@ -6,32 +6,31 @@ class LoginBackOffice extends CI_Controller {
     public function __construct()
 	{
 		parent::__construct();
-        if($this->session->userdata('admin')!=null)
+        if($this->session->userdata('user')!=null)
         {
-            $data = array('view'=> 'dashboard');
-            $this->load->view('template',$data);
+            redirect('BackOffice/index');
         }
 
 	
 	}
     public function login()
 	{
-		$this->load->view('login');
+		$this->load->view('bo_login.php');
 	}
 
     public function traitement()
 	{
-		$this->load->model('Administrateur','Admin');
-        $admin = $this->Admin->getAdminByCredentials($this->input->post('email'),$this->input->post('mdp'));
+		$this->load->model('Admin');
+        $admin = $this->Admin->getAdminByCredentials($this->input->post('user'),$this->input->post('pwd'));
         if(count($admin)>0){
-            $this->session->set_userdata('admin',$admin);
-            $data = array('view'=> 'dashboard');
-            $this->load->view('template',$data);
+            $this->session->set_userdata('user',$admin);
+            redirect('BackOffice/index');
+        
         }
         else
         {
-            $data = array('erreur'=> 'Vérifiez votre nom et votre mot de passe');
-            $this->load->view('login',$data);
+            $data = array('erreur'=> 'Verifier votre nom et votre mot de passe');
+            $this->load->view('bo_login.php',$data);
         }
 	}
 	
