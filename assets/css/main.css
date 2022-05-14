@@ -102,9 +102,9 @@ section {
 }
 .section-header h2 {
   font-size: 48px;
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 20px;
-  color: var(--color-secondary);
+  color: var(--color-white);
 }
 .section-header p {
   margin: 0 auto;
@@ -238,7 +238,7 @@ section {
 }
 .header .btn-getstarted:hover, .header .btn-getstarted:focus:hover {
   color: var(--color-white);
-  background: rgba(var(--color-primary-rgb), 0.85);
+  background: rgba(var(--color-primary-rgb), 0.55);
 }
 @media (max-width: 1279px) {
   .header .btn-getstarted, .header .btn-getstarted:focus {
@@ -393,7 +393,7 @@ section {
     position: fixed;
     top: 0;
     left: -100%;
-    width: calc(100% - 70px);
+    width: calc(50% - 70px);
     bottom: 0;
     transition: 0.3s;
     z-index: 9997;
@@ -403,7 +403,7 @@ section {
     inset: 0;
     padding: 10px 0;
     margin: 0;
-    background: rgba(var(--color-secondary-rgb), 0.9);
+    background: rgba(var(--color-gray-rgb), 0.9);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -489,7 +489,7 @@ section {
   margin: 0 0 10px 0;
   font-size: 48px;
   font-weight: 300;
-  color: var(--color-secondary);
+  color: var(--color-white);
   font-family: var(--font-secondary);
 }
 .hero-animated h2 span {
@@ -1012,7 +1012,7 @@ section {
   }
 }
 .about h3 {
-  color: var(--color-secondary);
+  color: var(--color-white);
   font-family: var(--font-secondary);
   font-weight: 300;
   font-size: 32px;
@@ -1033,7 +1033,7 @@ section {
   background: none;
   font-size: 18px;
   font-weight: 400;
-  color: var(--color-secondary);
+  color: var(--color-white);
   padding: 12px 0;
   margin-bottom: -2px;
   border-radius: 0;
@@ -1404,9 +1404,9 @@ section {
   border-radius: 8px;
   overflow: hidden;
 }
-/* .services .img img {
+.services .img img {
   transition: 0.6s;
-} */
+}
 .services .details {
   padding: 50px 30px;
   margin: -100px 30px 0 30px;
@@ -1458,9 +1458,9 @@ section {
 .services .service-item:hover .details .icon i {
   color: var(--color-primary);
 }
-/* .services .service-item:hover .img img {
+.services .service-item:hover .img img {
   transform: scale(1.2);
-} */
+}
 
 /*--------------------------------------------------------------
 # Testimonials Section
@@ -1562,7 +1562,7 @@ section {
 .pricing .pricing-item {
   padding: 60px 40px;
   box-shadow: 0 3px 20px -2px rgba(var(--color-gray-rgb), 0.15);
-  background: var(--color-white);
+  /* background: var(--color-white); */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1571,7 +1571,7 @@ section {
   overflow: hidden;
 }
 .pricing .pricing-header {
-  background: linear-gradient(rgba(var(--color-secondary-rgb), 0.9), rgba(var(--color-secondary-rgb), 0.9)), url("../img/pricing-bg.jpg") center center;
+  /* background: linear-gradient(rgba(var(--color-primary), 0.9), rgba(var(--color-secondary-rgb), 0.9)), url("../img/pricing-bg.jpg") center center; */
   background-size: cover;
   text-align: center;
   padding: 40px;
@@ -1600,7 +1600,7 @@ section {
 .pricing ul {
   padding: 30px 0;
   list-style: none;
-  color: var(--color-gray);
+  color: var(--color-white);
   text-align: left;
   line-height: 20px;
 }
@@ -1638,14 +1638,19 @@ section {
   border: 1px solid var(--color-primary);
 }
 .pricing .buy-btn:hover {
-  background: var(--color-primary);
+  background: var(--color-white);
   color: var(--color-white);
 }
 .pricing .featured {
-  border-color: var(--color-primary);
+  border-color: var(--color-white);
 }
 .pricing .featured .pricing-header {
-  background: linear-gradient(rgba(var(--color-primary-rgb), 0.9), rgba(var(--color-primary-rgb), 0.9)), url("../img/pricing-bg.jpg") center center;
+  background: linear-gradient(rgba(var(--color-white-rgb), 0.9), rgba(var(--color-white-rgb), 0.9));
+  color: rgba(var(--color-black-rgb),0.9);
+}
+.pricing .featured .pricing-header  * {
+  /* background: linear-gradient(rgba(var(--color-white-rgb), 0.9), rgba(var(--color-white-rgb), 0.9)); */
+  color: rgba(var(--color-black-rgb), 0.9);
 }
 .pricing .featured .buy-btn {
   background: var(--color-primary);

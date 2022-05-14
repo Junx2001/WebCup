@@ -7,7 +7,7 @@
 }
 
 .img {
-    background: #000000;
+    background: #ffffff;
     overflow: hidden;
 }
 
@@ -190,4 +190,23 @@
     100% {
         transform: translatey(100%);
     }
+}
+/* ----------------------------------------- decoration waves */
+.waves-pub{
+    position: absolute;
+    width: 80%;
+    height: auto;
+    bottom:33%;
+ 
+}
+/* decoration data-center */
+.datacenter-pub{
+    position: absolute;
+    width: 17vw;
+    left: 30%;
+    bottom: 50%;
+}
+.underground-pub{
+    position: absolute;
+    width: 15wh;
 }
