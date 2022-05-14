@@ -14,9 +14,6 @@ class BackOffice extends CI_Controller {
             redirect('LoginBackOffice/login');
         }
 
-		$this->load->database();
-		$this->load->helper('url');
-
 		$this->load->library('grocery_CRUD');
 
 	}
