@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'http://madagascar1.webcup.symars.re',
-	'username' => 'madagascar1',
-	'password' => 'e41V.Nr.OL',
-	'database' => 'madagascar1',
+	'hostname' => 'mysql-joharisoa.alwaysdata.net',
+	'username' => 'joharisoa',
+	'password' => 'cLAHfk5.jH:eRg3',
+	'database' => 'joharisoa_capsule',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
