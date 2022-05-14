@@ -211,7 +211,13 @@ section {
 }
 .header.sticked {
   background: var(--color-white);
+  color: black;
   box-shadow: 0px 2px 20px rgba(var(--color-secondary-rgb), 0.1);
+}
+.header.sticked * {
+  /* background: var(--color-white); */
+  color: black;
+  /* box-shadow: 0px 2px 20px rgba(var(--color-secondary-rgb), 0.1); */
 }
 .header .logo img {
   max-height: 40px;
@@ -275,7 +281,9 @@ section {
     font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 400;
-    color: rgba(var(--color-secondary-dark-rgb), 0.7);
+    /* color: rgba(var(--color-secondary-light), 0.7); */
+    /* teto nisy niova */
+    color: white;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -415,7 +423,8 @@ section {
     padding: 12px 20px;
     font-size: 16px;
     font-weight: 500;
-    color: rgba(var(--color-white-rgb), 0.7);
+    color: rgba(var(--color-white-rgb), 0.2);
+    /* color:#ffffff; */
     white-space: nowrap;
     transition: 0.3s;
   }
