@@ -41,11 +41,15 @@ class BackOffice extends CI_Controller {
 		try{
 			$crud = new grocery_CRUD();
 
-			$crud->set_theme('flexigrid');
-			$crud->set_table('Forfait');
+		
+            $crud->set_table('forfait');
 			$crud->set_subject('Forfait');
+			$crud->columns('nom', 'tailleMin', 'idLieu', 'type');
+			$crud->display_as('tailleMin', 'Stockage minimum');
+			$crud->display_as('idLieu', 'Lieu');
+			$crud->fields('nom', 'tailleMin', 'idLieu', 'type');
 			$crud->required_fields('nom','tailleMin','idLieu','type');
-			$crud->columns('nom','tailleMin','idLieu','type');
+            $crud->set_relation('idLieu','lieu','nom');
 
 			$output = $crud->render();
 
@@ -60,8 +64,7 @@ class BackOffice extends CI_Controller {
 		try{
 			$crud = new grocery_CRUD();
 
-			$crud->set_theme('flexigrid');
-			$crud->set_table('Lieu');
+			$crud->set_table('lieu');
 			$crud->set_subject('Lieu');
 			$crud->required_fields('nom','longitude','latitude');
 			$crud->columns('nom','longitude','latitude');

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
     // For view all the languages go to the folder assets/grocery_crud/languages/
-    $config['grocery_crud_default_language'] = 'english';
+    $config['grocery_crud_default_language'] = 'french';
 
     // There are only three choices: "uk-date" (dd/mm/yyyy), "us-date" (mm/dd/yyyy) or "sql-date" (yyyy-mm-dd)
     $config['grocery_crud_date_format'] = 'uk-date';
@@ -29,7 +29,7 @@
     $config['grocery_crud_paging_options'] = array('10','25','50','100');
 
     // Default theme for grocery CRUD
-    $config['grocery_crud_default_theme'] = 'flexigrid';
+    $config['grocery_crud_default_theme'] = 'tablestrap4';
 
     // The environment is important so we can have specific configurations for specific environments
     $config['grocery_crud_environment'] = 'production';
