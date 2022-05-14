@@ -1096,7 +1096,7 @@ section {
   }
 }
 .cta .content h3 {
-  color: var(--color-secondary);
+  color: var(--color-white);
   font-size: 48px;
   font-weight: 700;
 }
@@ -1371,7 +1371,7 @@ section {
 .features .tab-pane h3 {
   font-weight: 600;
   font-size: 36px;
-  color: var(--color-secondary);
+  color: var(--color-white);
 }
 .features .tab-pane ul {
   list-style: none;
