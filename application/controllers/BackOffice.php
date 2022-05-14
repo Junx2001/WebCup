@@ -44,12 +44,14 @@ class BackOffice extends CI_Controller {
 		
             $crud->set_table('forfait');
 			$crud->set_subject('Forfait');
-			$crud->columns('nom', 'tailleMin', 'idLieu', 'type');
-			$crud->display_as('tailleMin', 'Stockage minimum');
+			$crud->columns('nom', 'tailleMin', 'idLieu', 'idType');
+			$crud->display_as('tailleMin', 'Stockage min');
 			$crud->display_as('idLieu', 'Lieu');
-			$crud->fields('nom', 'tailleMin', 'idLieu', 'type');
-			$crud->required_fields('nom','tailleMin','idLieu','type');
+            $crud->display_as('idType', 'Type');
+			$crud->fields('nom', 'tailleMin', 'idLieu', 'idType');
+			$crud->required_fields('nom','tailleMin','idLieu','idType');
             $crud->set_relation('idLieu','lieu','nom');
+            $crud->set_relation('idType','typeForfait','nom');
 
 			$output = $crud->render();
 
@@ -68,6 +70,24 @@ class BackOffice extends CI_Controller {
 			$crud->set_subject('Lieu');
 			$crud->required_fields('nom','longitude','latitude');
 			$crud->columns('nom','longitude','latitude');
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+	}
+    public function crudType()
+	{
+		try{
+			$crud = new grocery_CRUD();
+
+			$crud->set_table('typeForfait');
+			$crud->set_subject('Type de Forfait');
+			$crud->required_fields('nom');
+			$crud->columns('nom');
 
 			$output = $crud->render();
 
