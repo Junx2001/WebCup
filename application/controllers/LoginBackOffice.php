@@ -6,12 +6,16 @@ class LoginBackOffice extends CI_Controller {
     public function __construct()
 	{
 		parent::__construct();
-        if($this->session->userdata('user')!=null)
+        if($this->session->userdata('admin')!=null)
         {
             redirect('BackOffice/index');
         }
 
 	
+	}
+    public function index()
+	{
+		redirect('LoginBackOffice/login');
 	}
     public function login()
 	{
@@ -21,9 +25,9 @@ class LoginBackOffice extends CI_Controller {
     public function traitement()
 	{
 		$this->load->model('Admin');
-        $admin = $this->Admin->getAdminByCredentials($this->input->post('user'),$this->input->post('pwd'));
+        $admin = $this->Admin->getAdminByCredentials($this->input->post('email'),$this->input->post('mdp'));
         if(count($admin)>0){
-            $this->session->set_userdata('user',$admin);
+            $this->session->set_userdata('admin',$admin);
             redirect('BackOffice/index');
         
         }
