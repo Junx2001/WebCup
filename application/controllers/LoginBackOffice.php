@@ -16,7 +16,7 @@ class LoginBackOffice extends CI_Controller {
 	}
     public function login()
 	{
-		$this->load->view('login.php');
+		$this->load->view('login');
 	}
 
     public function traitement()
@@ -30,8 +30,8 @@ class LoginBackOffice extends CI_Controller {
         }
         else
         {
-            $data = array('erreur'=> 'Verifiez votre nom et votre mot de passe');
-            $this->load->view('login.php',$data);
+            $data = array('erreur'=> 'Vérifiez votre nom et votre mot de passe');
+            $this->load->view('login',$data);
         }
 	}
 	

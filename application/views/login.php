@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,17 +37,18 @@
                                 <i class="bi bi-shield-lock"></i>
                             </div>
                         </div>
-
+                        
                         <?php if (isset($erreur)) { ?>
-                        <div class="alert alert-light-danger color-danger"><i class="bi bi-exclamation-circle"></i> 
-                            <?php echo $erreur; ?>
+                        <div class="alert alert-danger alert-dismissible show fade">
+                            <i class="bi bi-exclamation-circle"></i> 
+                                <?php echo $erreur; ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         <?php } ?>
 
+
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Valider</button>
                     </form>
-
-                    
 
                 </div>
             </div>
@@ -60,6 +60,10 @@
         </div>
 
     </div>
+    <script src="<?php echo site_url(); ?>assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="<?php echo site_url(); ?>assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="<?php echo site_url(); ?>assets/js/main.js"></script>
 </body>
 
 </html>
