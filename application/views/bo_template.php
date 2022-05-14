@@ -50,14 +50,7 @@ foreach($crud['css_files'] as $file): ?>
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class="sidebar-item <?php if($view == "bo_dashboard") echo "active"; ?> ">
-                            <a href="#" class="sidebar-link">
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Statistique</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item <?php if($view == "bo_crud") echo "active"; ?> has-sub">
+                        <li class="sidebar-item has-sub">
                             <a href="#" class="sidebar-link">
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>CRUD</span>
@@ -118,7 +111,7 @@ foreach($crud['css_files'] as $file): ?>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="<?php echo site_url() ; ?>LoginBackOffice/logout"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo site_url() ; ?>BackOffice/logout"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </div>
