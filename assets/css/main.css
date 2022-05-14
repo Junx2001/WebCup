@@ -1115,7 +1115,7 @@ section {
   z-index: -1;
 }
 .cta .content p {
-  color: var(--color-secondary);
+  color: var(--color-white);
   font-weight: 600;
   font-size: 18px;
 }
