@@ -17,15 +17,15 @@
     <div id="auth">
 
         <div class="row h-100">
-            <div class="col-lg-5 col-12">
+            <div class="col-lg-7 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
                         <a href="index.html"><img src="<?php echo  site_url() ?>assets/images/logo/logo.png" alt="Logo"></a>
                     </div>
-                    <h1 class="auth-title">Connexion.</h1>
-                    <p class="auth-subtitle mb-5">Connectez-vous en entrant vos données personnelles.</p>
+                    <h1 class="auth-title">Bienvenue.</h1>
+                    <p class="auth-subtitle mb-5">Connectez-vous en tant qu'administrateur.</p>
 
-                    <form action="<?php echo  site_url() ?>login/traitement" method="post">
+                    <form action="<?php echo  site_url() ?>LoginBackOffice/traitement" method="post">
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl" placeholder="Email" name="email">
                             <div class="form-control-icon">
@@ -38,24 +38,23 @@
                                 <i class="bi bi-shield-lock"></i>
                             </div>
                         </div>
-                        <!-- <div class="form-check form-check-lg d-flex align-items-end">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label text-gray-600" for="flexCheckDefault">
-                                Keep me logged in
-                            </label>
-                        </div> -->
+
+                        <?php if (isset($erreur)) { ?>
+                        <div class="alert alert-light-danger color-danger"><i class="bi bi-exclamation-circle"></i> 
+                            <?php echo $erreur; ?>
+                        </div>
+                        <?php } ?>
+
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Valider</button>
                     </form>
-                    <div class="text-center mt-5 text-lg fs-4">
-                        <p class="text-gray-600">Vous n'avez pas encore de compte? <a href="auth-register.html"
-                                class="font-bold">Inscrivez-vous</a>.</p>
-                        <p><a class="font-bold" href="auth-forgot-password.html">Mot de passe oublié?</a>.</p>
-                    </div>
+
+                    
+
                 </div>
             </div>
-            <div class="col-lg-7 d-none d-lg-block">
+            <div class="col-lg-5 d-none d-lg-block">
                 <div id="auth-right">
-
+                        
                 </div>
             </div>
         </div>
