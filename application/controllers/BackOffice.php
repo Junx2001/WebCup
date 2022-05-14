@@ -55,6 +55,7 @@ class BackOffice extends CI_Controller {
 
 	public function changeBoLanguage($lang)
 	{
+		
 		$this->session->set_userdata('crud_language',$lang);
 		$this->session->set_userdata('bo_language',strtolower($lang));
 

@@ -8,16 +8,16 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['welcoming']      = "Welcome to Post Gen, Choose the package that suits you";
+$lang['welcoming']      = "Bienvenue sur le site de Post Gen, Choisissez le forfait qui vous convient";
+
 
 
 $lang['sidebar'] = '<li class="submenu-item">
-<a href="'.site_url('BackOffice').'">Package</a>
+<a href="'.site_url('BackOffice').'">Pacchetto</a>
 </li>
 <li class="submenu-item">
-<a href="'.site_url('BackOffice/CrudType').'">Type of package</a>
+<a href="'.site_url('BackOffice/CrudType').'">Tipo di pacchetto</a>
 </li>
 <li class="submenu-item">
-<a href="'.site_url('BackOffice/CrudLieu').'">Place of deposit</a>
+<a href="'.site_url('BackOffice/CrudLieu').'">Luogo di deposito</a>
 </li>';
-
