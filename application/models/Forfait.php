@@ -1,6 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
 class Forfait extends CI_Model{
+    public function getForfaitById($id){
+        $sql="SELECT * FROM forfait where id='%s'";
+        $sql=sprintf($sql,$id);
+        $query = $this->db->query($sql);
+        $row = $query -> result_array();
+        return $row[0];
+    }
 
     public function getForfaits(){
         $sql="SELECT * FROM vueForfait";

@@ -6,7 +6,10 @@ class PaiementCtrl extends CI_Controller {
     public function __construct()
 	{
 		parent::__construct();
-
+        if($this->session->userdata('user')==null)
+        {
+            redirect('UserCtrl');
+        }
 	}
 	
 	public function index(){
@@ -29,7 +32,16 @@ class PaiementCtrl extends CI_Controller {
         $typeDevise = $this->input->post('type');
         $this->load->model('Paiement');
         $this->Paiement->payerCommande($idCommande,$typeDevise);
+    }
 
+    public function equivalencePrix(){
+        $idUser = $this->session->userdata('user');
+
+        $this->load->model('Commande');
+        $listeCommande = $this->Commande->getCommandeNotPaidByIdUser($idUser);
+
+        $sumAPayer = $this->Commande->getSumCommandes($idUser);
+        
     }
 			
 }
