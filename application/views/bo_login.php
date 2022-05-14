@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Enigma Admin</title>
+    <title>PostGen</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo  site_url() ?>assets/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo  site_url() ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -54,7 +54,7 @@
             </div>
             <div class="col-lg-5 d-none d-lg-block">
                 <div id="auth-right">
-                        
+                <img src="<?php echo  site_url() ?>assets/images/bg/globe.gif" alt="Logo" style="width:100%; height:100%;">
                 </div>
             </div>
         </div>

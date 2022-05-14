@@ -9,6 +9,7 @@ class BackOffice extends CI_Controller {
 	{
 		parent::__construct();
 
+
         if($this->session->userdata('admin')==null)
         {
             redirect('LoginBackOffice/login');
@@ -29,11 +30,38 @@ class BackOffice extends CI_Controller {
 
 	public function _example_output($output = null)
 	{
-        $data = array('view' => 'bo_crud','crud' => (array)$output);
+		if($this->session->userdata('bo_language')==null)
+		{
+			$language = 'French';
+		}
+		else
+		{
+			$language = $this->session->userdata('bo_language');
+		}
+		
+		$this->lang->load('backoffice', $language);
+		$sidebar = $this->lang->line('sidebar');
+        $data = array(
+			'view' => 'bo_crud',
+			'crud' => (array)$output,
+			'sidebarTranslated' =>$sidebar
+		);
+
 		$this->load->view('bo_template.php',$data);
+
+
+		
 	}
 
+	public function changeBoLanguage($lang)
+	{
+		
+		$this->session->set_userdata('crud_language',$lang);
+		$this->session->set_userdata('bo_language',strtolower($lang));
 
+
+		redirect('BackOffice/crudForfait');
+	}
 
 
 	public function crudForfait()
@@ -42,6 +70,7 @@ class BackOffice extends CI_Controller {
 			$crud = new grocery_CRUD();
 
 		
+			$crud->set_language($this->session->userdata('crud_language'));
             $crud->set_table('forfait');
 			$crud->set_subject('Forfait');
 			$crud->columns('nom', 'tailleMin', 'idLieu', 'idType');
@@ -66,6 +95,8 @@ class BackOffice extends CI_Controller {
 		try{
 			$crud = new grocery_CRUD();
 
+			
+			$crud->set_language($this->session->userdata('crud_language'));
 			$crud->set_table('lieu');
 			$crud->set_subject('Lieu');
 			$crud->required_fields('nom','longitude','latitude');
@@ -84,6 +115,8 @@ class BackOffice extends CI_Controller {
 		try{
 			$crud = new grocery_CRUD();
 
+			
+			$crud->set_language($this->session->userdata('crud_language'));
 			$crud->set_table('typeForfait');
 			$crud->set_subject('Type de Forfait');
 			$crud->required_fields('nom');
