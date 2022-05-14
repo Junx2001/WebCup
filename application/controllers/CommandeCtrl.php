@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ForfaitCtrl extends CI_Controller {
+class CommandeCtrl extends CI_Controller {
 
     public function __construct()
 	{
@@ -10,14 +10,18 @@ class ForfaitCtrl extends CI_Controller {
 	}
 	
 	public function index(){
-		redirect('ForfaitCtrl/allForfaits');
+		redirect('CommandeCtrl/commanderPage');
 	}
+
+    public function commanderPage(){
+        $this->load->view('fo_commande');
+    }
 
     public function commander()
     {
-        $idForfait = $this->input->get('idForfait');
-        $idUser = $this->input->get('idUser');
-        $qte = $this->input->get('qte');
+        $idForfait = $this->input->post('idForfait');
+        $idUser = $this->input->post('idUser');
+        $qte = $this->input->post('qte');
         
 
         $this->load->model('Commande');

@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="<?php echo site_url(); ?>PaiementCtrl/payer" method="post">
-        <input type="text" name="idCommande" placeholder="idCommande">
-        <input type="text" name="type" placeholder="type">
+    <form action="<?php echo site_url(); ?>CommandeCtrl/commander" method="post">
+        <input type="text" name="idForfait" placeholder="idForfait">
+        <input type="text" name="idUser" placeholder="idUser">
+        <input type="number" name="qte" placeholder="qte">
         <input type="submit" value="valider">
     </form>
 </body>
