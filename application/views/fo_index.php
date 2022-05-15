@@ -55,7 +55,7 @@
 
 <body>
     <style>
-    /* body {
+    body {
         background-color: #010101;
 
     }
@@ -63,7 +63,7 @@
     .hero-animated {
         background-image: url('<?php echo  site_url() ?>assets/images/front-office/background.jpg');
         background-repeat: no-repeat;
-    } */
+    }
     </style>
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top" data-scrollto-offset="0">
@@ -172,7 +172,7 @@
                                 </li>
                             </ul>
 
-                            <div class="text-center mt-auto"><?php echo site_url(); ?>
+                            <div class="text-center mt-auto">
                                 <a href="<?php echo site_url(); ?>CommandeCtrl/commanderPage?id=<?php echo $forfaits[$i]['id']; ?>" class="buy-btn">Buy Now</a>
                             </div>
 

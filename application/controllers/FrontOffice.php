@@ -58,6 +58,20 @@ class FrontOffice extends CI_Controller {
 			'neuf' => $neuf
 		);
 
+		$this->load->model('Forfait');
+        $forfaits = $this->Forfait->getForfaits();
+        
+
+        for( $i=0;$i<count($forfaits);$i++) {
+            if($forfaits[$i]['typePayement']=='abonnement mensuel'){
+                $forfaits[$i]['periode'] = '/mois';
+            }else{
+                $forfaits[$i]['periode'] ='';
+            }
+        }
+        
+        $data ['forfaits'] = $forfaits;
+
 		$this->load->view('fo_index',$data);
 
 

@@ -137,11 +137,7 @@ function calcule() {
         //alert(id);
         // var r = confirm("Do you want to Delete");
         var temp = document.getElementById('unite').value;
-        console.log(temp);
         var valeur = document.getElementById('valeur');
-        console.log(temp == "bitcoin");
-        console.log(temp == "$");
-        console.log(temp == "€");
         var qte = document.getElementById('qte').value;
         if(temp=="$"){
             if (qte <= <?php echo $forfaits['tailleMin']; ?>){
