@@ -81,22 +81,20 @@ from forfait f join lieu l on f.idLieu = l.id join typeForfait t on t.id = f.idT
     FOREIGN KEY(idLieu) REFERENCES lieu (id) ON UPDATE CASCADE;  
 
 
-
-ALTER TABLE forfaitDetails ADD CONSTRAINT `forfaitDetails_fk`   
+    ALTER TABLE forfaitDetails ADD CONSTRAINT `forfaitDetails_fk`   
     FOREIGN KEY(idForfait) REFERENCES forfait (id) ON DELETE  CASCADE;  
     ALTER TABLE forfaitDetails ADD CONSTRAINT `forfaitDetails1_fk`   
     FOREIGN KEY(idTypeDonne) REFERENCES typeDonne (id) ON UPDATE CASCADE;  
 
-
-ALTER TABLE commande ADD CONSTRAINT `commande_fk`   
+    ALTER TABLE commande ADD CONSTRAINT `commande_fk`   
     FOREIGN KEY(idForfait) REFERENCES forfait (id) ON DELETE  CASCADE;  
 
 ALTER TABLE commande ADD CONSTRAINT `commande1_fk`   
     FOREIGN KEY(idUser) REFERENCES user (id) ON DELETE  CASCADE;  
 
+    
 ALTER TABLE paiement ADD CONSTRAINT `paiement_fk`   
     FOREIGN KEY(idCommande) REFERENCES commande (id) ON DELETE  CASCADE;  
-
 
 
 -- insertion de données

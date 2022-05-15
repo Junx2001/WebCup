@@ -40,7 +40,6 @@ if (empty($view)) {
                     <div class="d-flex justify-content-between">
                         <div class="logo">
                             <a href="#">
-
                                 <div class="icon dripicons-media-next">PostGen</div>
                             </a>
                         </div>

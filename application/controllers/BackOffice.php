@@ -68,14 +68,17 @@ class BackOffice extends CI_Controller {
 			$crud->set_language($this->session->userdata('crud_language'));
             $crud->set_table('forfait');
 			$crud->set_subject('Forfait');
-			$crud->columns('nom', 'tailleMin', 'idLieu', 'idType');
+			$crud->columns('nom', 'tailleMin', 'idLieu', 'idType','idTypeDonne');
 			$crud->display_as('tailleMin', 'Stockage min');
 			$crud->display_as('idLieu', 'Lieu');
-            $crud->display_as('idType', 'Type');
-			$crud->fields('nom', 'tailleMin', 'idLieu', 'idType');
+            $crud->display_as('idType', 'TypeForfait');
+			$crud->display_as('idTypeDonne', 'TypeDonne');
+			$crud->fields('nom', 'tailleMin', 'idLieu', 'idType','idTypeDonne');
 			$crud->required_fields('nom','tailleMin','idLieu','idType');
             $crud->set_relation('idLieu','lieu','nom');
             $crud->set_relation('idType','typeForfait','nom');
+			$crud->set_relation_n_n('idTypeDonne','forfaitDetails','typeDonne','idForfait','idTypeDonne','nom');
+
 
 			$output = $crud->render();
 
@@ -126,10 +129,32 @@ class BackOffice extends CI_Controller {
 		}
 	}
 
+	public function crudTypeDonne()
+	{
+		try{
+			$crud = new grocery_CRUD();
+
+			
+			$crud->set_language($this->session->userdata('crud_language'));
+			$crud->set_table('typeDonne');
+			$crud->set_subject('Type de données');
+			$crud->required_fields('nom');
+			$crud->columns('nom');
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+	}
+
     public function logout()
 	{
         $this->session->unset_userdata('admin');
-        redirect('LoginBackOffice/login');
+		$data = array('message'=> 'Vous vous êtes déconnecté(e)');
+        $this->load->view('bo_login.php',$data);
 	}
    
 			

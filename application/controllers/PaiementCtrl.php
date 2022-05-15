@@ -6,10 +6,10 @@ class PaiementCtrl extends CI_Controller {
     public function __construct()
 	{
 		parent::__construct();
-        if($this->session->userdata('user')==null)
-        {
-            redirect('UserCtrl');
-        }
+        // if($this->session->userdata('user')==null)
+        // {
+        //     redirect('UserCtrl');
+        // }
 	}
 	
 	public function index(){
@@ -38,10 +38,28 @@ class PaiementCtrl extends CI_Controller {
         $idUser = $this->session->userdata('user');
 
         $this->load->model('Commande');
+        $this->load->model('Fonction');
+        $this->load->model('WebService');
         $listeCommande = $this->Commande->getCommandeNotPaidByIdUser($idUser);
 
         $sumAPayer = $this->Commande->getSumCommandes($idUser);
+        $usd = $this->Fonction->euroToUSD($sumAPayer);
+        $crypto = $this->WebService->getCrypto();
+
+        $all = [];
+
+        for($i=0; $i<count($crypto); $i++){
+            $all[$crypto[$i]->name] = $usd/$crypto[$i]->price_usd ;
+        }
+
+        $data = array(
+            'view' => 'devise',
+            'crypto' => $all
+        );
+        $this->load->view('fo_cryptomonnaie',$data);
+
+
         
     }
-			
+    	
 }
