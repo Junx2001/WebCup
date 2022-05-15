@@ -116,7 +116,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
                         <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-activity icon"></i></div>
+                            <div class="icon"><i class="bi bi-star"></i></div>
                             <h4><a href="" class="stretched-link">Dans l'espace</a></h4>
                             <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                         </div>
@@ -124,7 +124,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="200">
                         <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
+                            <div class="icon"><i class="bi bi-water"></i></div>
                             <h4><a href="" class="stretched-link">Sous l'ocean</a></h4>
                             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                         </div>

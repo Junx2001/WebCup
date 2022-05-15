@@ -46,19 +46,22 @@ class PaiementCtrl extends CI_Controller {
         $usd = $this->Fonction->euroToUSD($sumAPayer);
         $crypto = $this->WebService->getCrypto();
 
-        $all = [];
+        $devise = $this->WebService->getDevise();
 
-        for($i=0; $i<count($crypto); $i++){
-            $all[$crypto[$i]->name] = $usd/$crypto[$i]->price_usd ;
-        }
+        
+        $all['Bitcoin']= $usd / $crypto[0]->price_usd;
+        $all['DogeCoin']= $usd / $crypto[3]->price_usd;
+        $all['livre']= $usd * $devise->results->GBP;
+        $all['euro'] = $usd * $devise->results->EUR;
+        $all['usd'] = $usd;
+
 
         $data = array(
             'view' => 'devise',
             'crypto' => $all
         );
-        $this->load->view('fo_cryptomonnaie',$data);
-
-
+        // $this->load->view('fo_cryptomonnaie',$data);
+        var_dump($all);
         
     }
     	
