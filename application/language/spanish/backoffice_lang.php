@@ -20,5 +20,8 @@ $lang['sidebar'] = '<li class="submenu-item">
 </li>
 <li class="submenu-item">
 <a href="'.site_url('BackOffice/CrudLieu').'">Lugar de depósito</a>
+</li>
+<li class="submenu-item">
+<a href="'.site_url('BackOffice/CrudTypeDonne').'">tipo de datos</a>
 </li>';
 
