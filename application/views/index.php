@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="<?php echo  site_url() ?>assets/images/front-office/favicon.png" rel="icon">
+    <link href="<?php echo  site_url() ?>assets/images/front-office/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,24 +21,24 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="<?php echo  site_url() ?>assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo  site_url() ?>assets/vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="<?php echo  site_url() ?>assets/vendors/aos/aos.css" rel="stylesheet">
+    <link href="<?php echo  site_url() ?>assets/vendors/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="<?php echo  site_url() ?>assets/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Variables CSS Files. Uncomment your preferred color scheme -->
     <!-- <link href="assets/css/variables.css" rel="stylesheet"> -->
     <!-- <link href="assets/css/variables-blue.css" rel="stylesheet"> -->
     <!-- <link href="assets/css/variables-green.css" rel="stylesheet"> -->
     <!-- <link href="assets/css/variables-orange.css" rel="stylesheet"> -->
-    <link href="assets/css/variables-purple.css" rel="stylesheet">
+    <link href="<?php echo  site_url() ?>assets/css/variables-purple.css" rel="stylesheet">
     <!-- <link href="assets/css/variables-red.css" rel="stylesheet"> -->
     <!-- <link href="assets/css/variables-pink.css" rel="stylesheet"> -->
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="<?php echo  site_url() ?>assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo  site_url() ?>assets/css/style.css">
 
 
 
@@ -58,7 +58,7 @@
     }
 
     .hero-animated {
-        background-image: url('assets/img/background.jpg');
+        background-image: url('<?php echo  site_url() ?>assets/images/front-office/background.jpg');
         background-repeat: no-repeat;
     }
     </style>
@@ -112,7 +112,7 @@
     <section id="hero-animated" class="hero-animated d-flex align-items-center">
         <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative"
             data-aos="zoom-out">
-            <img src="assets/img/hero-carousel/hero-carousel-3.svg" class="img-fluid animated">
+            <img src="<?php echo  site_url() ?>assets/images/front-office/hero-carousel/hero-carousel-3.svg" class="img-fluid animated">
             <h2>Je suis passé <span>ICI</span></h2>
             <p>Laisse une partie de toi ici</p>
             <div class="d-flex">
@@ -182,7 +182,7 @@
                     <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                         <div class="service-item">
                             <div class="img">
-                                <img src="assets/img/fusee-espace.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/fusee-espace.jpg" class="img-fluid" alt="">
                             </div>
                             <div class="details position-relative">
                                 <div class="icon">
@@ -200,7 +200,7 @@
                     <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="300">
                         <div class="service-item">
                             <div class="img">
-                                <img src="assets/img/under-water.jpg" alt="" class="img-fluid">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/under-water.jpg" alt="" class="img-fluid">
                                 <!-- <img src="assets/img/background-pub.png" class="img-fluid" alt=""> -->
                             </div>
                             <div class="details position-relative">
@@ -218,7 +218,7 @@
                     <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="400">
                         <div class="service-item">
                             <div class="img">
-                                <img src="assets/img/data-center.jpg" alt="" class="img-fluid">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/data-center.jpg" alt="" class="img-fluid">
                                 <!-- <img src="assets/img/background-pub.png" class="img-fluid" alt=""> -->
                             </div>
                             <div class="details position-relative">
@@ -237,7 +237,7 @@
                         <div class="service-item">
                             <div class="img">
 
-                                <img src="assets/img/soil-vector-png-.png" class="img-fluid" alt="">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/soil-vector-png-.png" class="img-fluid" alt="">
                             </div>
                             <div class="details position-relative">
                                 <div class="icon">
@@ -270,7 +270,7 @@
 
                     <div class="col-lg-5">
                         <div class="about-img">
-                            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                            <img src="<?php echo  site_url() ?>assets/images/front-office/about.jpg" class="img-fluid" alt="">
                         </div>
                     </div>
 
@@ -409,7 +409,7 @@
 
                     <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
                         <div class="img">
-                            <img src="assets/img/corp-capsule.png" alt="" class="img-fluid">
+                            <img src="<?php echo  site_url() ?>assets/images/front-office/corp-capsule.png" alt="" class="img-fluid">
                         </div>
                     </div>
 
@@ -532,7 +532,7 @@
                             </div>
                             <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up"
                                 data-aos-delay="200">
-                                <img src="assets/img/features-1.svg" alt="" class="img-fluid">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/features-1.svg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End Tab Content 1 -->
@@ -566,7 +566,7 @@
                                 </ul>
                             </div>
                             <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-2.svg" alt="" class="img-fluid">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/features-2.svg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End Tab Content 2 -->
@@ -597,7 +597,7 @@
                                 </p>
                             </div>
                             <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-3.svg" alt="" class="img-fluid">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/features-3.svg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End Tab Content 3 -->
@@ -629,7 +629,7 @@
                                 </ul>
                             </div>
                             <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-4.svg" alt="" class="img-fluid">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/features-4.svg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End Tab Content 4 -->
@@ -661,7 +661,7 @@
                                 </ul>
                             </div>
                             <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-5.svg" alt="" class="img-fluid">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/features-5.svg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End Tab Content 5 -->
@@ -693,7 +693,7 @@
                                 </ul>
                             </div>
                             <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-6.svg" alt="" class="img-fluid">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/features-6.svg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End Tab Content 6 -->
@@ -863,7 +863,7 @@
                     </div>
 
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                        style='background-image: url("assets/img/faq.jpg");'>&nbsp;</div>
+                        style='background-image: url("<?php echo  site_url() ?>assets/images/front-office/faq.jpg");'>&nbsp;</div>
                 </div>
 
             </div>
@@ -885,7 +885,7 @@
                     <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
                         <div class="team-member">
                             <div class="member-img">
-                                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/team/team-1.jpg" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
                                 <div class="social">
@@ -903,7 +903,7 @@
                     <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
                         <div class="team-member">
                             <div class="member-img">
-                                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/team/team-2.jpg" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
                                 <div class="social">
@@ -921,7 +921,7 @@
                     <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
                         <div class="team-member">
                             <div class="member-img">
-                                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo  site_url() ?>assets/images/front-office/team/team-3.jpg" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
                                 <div class="social">
@@ -1034,16 +1034,16 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="<?php echo  site_url() ?>assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo  site_url() ?>assets/vendors/aos/aos.js"></script>
+    <script src="<?php echo  site_url() ?>assets/vendors/glightbox/js/glightbox.min.js"></script>
+    <script src="<?php echo  site_url() ?>assets/vendors/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="<?php echo  site_url() ?>assets/vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="<?php echo  site_url() ?>assets/vendors/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/index.js"></script>
+    <script src="<?php echo  site_url() ?>assets/js/main-fo.js"></script>
+    <script src="<?php echo  site_url() ?>assets/js/index.js"></script>
 
 
     <script>
