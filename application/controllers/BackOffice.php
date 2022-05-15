@@ -153,7 +153,8 @@ class BackOffice extends CI_Controller {
     public function logout()
 	{
         $this->session->unset_userdata('admin');
-        redirect('LoginBackOffice/login');
+		$data = array('message'=> 'Vous vous êtes déconnecté(e)');
+        $this->load->view('bo_login.php',$data);
 	}
    
 			
