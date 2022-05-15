@@ -10,8 +10,8 @@ class FrontOffice extends CI_Controller {
 	}
 	
 	public function index(){
-		//redirect('FrontOffice/accueil');
-		$this->load->view('index');
+		redirect('FrontOffice/traduction');
+		// $this->load->view('index');
 	}
 
     public function accueil(){
@@ -21,6 +21,57 @@ class FrontOffice extends CI_Controller {
     public function logout()
 	{
         $this->session->unset_userdata('user');
-        redirect('FrontOffice/accueil');
+        redirect('FrontOffice/');
+	}
+
+	public function traduction()
+	{
+		if($this->session->userdata('fo_language')==null)
+		{
+			$language = 'French';
+		}
+		else
+		{
+			$language = $this->session->userdata('fo_language');
+		}
+		
+		$this->lang->load('frontoffice', $language);
+		$un = $this->lang->line('un');
+		$navbar = $this->lang->line('navbar');
+		$deux = $this->lang->line('deux');
+		$trois = $this->lang->line('trois');
+		$quatre = $this->lang->line('quatre');
+		$cinq = $this->lang->line('cinq');
+		$six = $this->lang->line('six');
+		$sept = $this->lang->line('sept');
+		$huit = $this->lang->line('huit');
+		$neuf = $this->lang->line('neuf');
+        $data = array(
+			'un' =>$un,
+			'navbar'=>$navbar,
+			'deux' =>$deux,
+			'trois' => $trois,
+			'quatre' => $quatre,
+			'cinq' => $cinq,
+			'six' => $six,
+			'sept' => $sept,
+			'huit' => $huit,
+			'neuf' => $neuf
+		);
+
+		$this->load->view('index',$data);
+
+
+		
+	}
+	
+	public function changeFoLanguage($lang)
+	{
+		
+		$this->session->set_userdata('crud_language',$lang);
+		$this->session->set_userdata('fo_language',strtolower($lang));
+
+
+		redirect('FrontOffice/traduction');
 	}
 }
