@@ -63,9 +63,9 @@ CREATE TABLE paiement (
 );
 
 
-create view vueForfait as (
+create or replace view vueForfait as (
 select f.id,f.prix,f.tailleMin, t.nom as nomType,l.nom as nomLieu,f.prixAdd,f.nom as nomForfait, f.idType,
-f.idLieu,l.longitude,l.latitude
+f.idLieu,l.longitude,l.latitude, f.typePayement
 from forfait f join lieu l on f.idLieu = l.id join typeForfait t on t.id = f.idType
 );
 

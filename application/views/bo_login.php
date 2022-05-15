@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="<?php echo  site_url() ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo  site_url() ?>assets/css/app.css">
     <link rel="stylesheet" href="<?php echo  site_url() ?>assets/css/pages/auth.css">
+    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/vendors/dripicons/webfont.css">
+    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/css/pages/dripicons.css">
+
 </head>
 
 <body>
@@ -19,8 +22,19 @@
             <div class="col-lg-7 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html"><img src="<?php echo  site_url() ?>assets/images/logo/logo.png" alt="Logo"></a>
+
+                        <h1><div class="icon dripicons-media-next">PostGen</div></h1>
+                
                     </div>
+
+                    <?php if (isset($message)) { ?>
+                        <div class="alert alert-info alert-dismissible show fade">
+                            <i class="bi bi-exclamation-circle"></i> 
+                                <?php echo $message; ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        <?php } ?>
+
                     <h1 class="auth-title">Bienvenue.</h1>
                     <p class="auth-subtitle mb-5">Connectez-vous en tant qu'administrateur.</p>
 

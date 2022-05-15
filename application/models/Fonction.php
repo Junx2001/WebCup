@@ -19,6 +19,10 @@ class Fonction extends CI_Model{
         return $closest;
 	}
 
+    public function euroToUSD($euro){
+        return $euro*1.04;
+    }
+
 }
 
 ?>
