@@ -13,7 +13,7 @@ class WebService extends CI_Model{
         $options = array(
             'http'=>array(
               'method'=>"GET",
-              'header'=>"X-CoinAPI-Key:45C4EE47-7DA6-4613-84ED-F7B73667E6BA"
+              'header'=>"X-CoinAPI-Key:A6F0183F-2E4E-45F1-BBE0-F853A0DE0ACA"
             )
           );
           $context=stream_context_create($options);

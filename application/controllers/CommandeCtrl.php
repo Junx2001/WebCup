@@ -24,19 +24,24 @@ class CommandeCtrl extends CI_Controller {
 		$this->load->model('Forfait');
 		$myForfaits = $this->Forfait->getForfaitById($id);
 		$data['forfaits']=$myForfaits;
+
+        $this->load->model('WebService');
+        $data['devise'] = $this->WebService->getDevise();
+        $data['crypto'] = $this->WebService->getCrypto();
         $this->load->view('fo_commande',$data);
     }
 
     public function commander()
     {
-        $idForfait = $this->input->post('idForfait');
+        // $idForfait = $this->input->post('idForfait');
        
-        $idUser = $this->session->userdata('user');
-        $qte = $this->input->post('qte');
+        // $idUser = $this->session->userdata('user');
+        // $qte = $this->input->post('qte');
         
 
-        $this->load->model('Commande');
-        $this->Commande->commander($idUser,$idForfait,$qte);
+        // $this->load->model('Commande');
+        // $this->Commande->commander($idUser,$idForfait,$qte);
+        $this->load->view('commande_valider');
 
     }
 
