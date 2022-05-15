@@ -409,7 +409,7 @@
 
                     <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
                         <div class="img">
-                            <img src="assets/img/cta.jpg" alt="" class="img-fluid">
+                            <img src="assets/img/corp-capsule.png" alt="" class="img-fluid">
                         </div>
                     </div>
 
@@ -718,14 +718,14 @@
                 </div>
 
                 <div class="row gy-4">
-
+                    <?php for($i=0;$i<3;$i++){ ?>
                     <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="pricing-item" onmouseover="hover('1')" id="featured1"
-                            onmouseleave="removehover('1')">
+                        <div class="pricing-item" onmouseover="hover('<?php echo $i;?>')" id="featured<?php echo $i;?>"
+                            onmouseleave="removehover('<?php echo $i;?>')">
 
                             <div class="pricing-header">
                                 <h3>Free Plan</h3>
-                                <h4><sup>$</sup>0<span> / month</span></h4>
+                                <h4><sup>$</sup>30<span> / month</span></h4>
                             </div>
 
                             <ul>
@@ -743,55 +743,7 @@
 
                         </div>
                     </div><!-- End Pricing Item -->
-
-                    <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="pricing-item ">
-
-                            <div class="pricing-header">
-                                <h3>Business Plan</h3>
-                                <h4><sup>$</sup>29<span> / month</span></h4>
-                            </div>
-
-                            <ul>
-                                <li><i class="bi bi-dot"></i> <span>Quam adipiscing vitae proin</span></li>
-                                <li><i class="bi bi-dot"></i> <span>Nec feugiat nisl pretium</span></li>
-                                <li><i class="bi bi-dot"></i> <span>Nulla at volutpat diam uteera</spa>
-                                </li>
-                                <li><i class="bi bi-dot"></i> <span>Pharetra massa massa ultricies</spa>
-                                </li>
-                                <li><i class="bi bi-dot"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-                            </ul>
-
-                            <div class="text-center mt-auto">
-                                <a href="#" class="buy-btn">Buy Now</a>
-                            </div>
-
-                        </div>
-                    </div><!-- End Pricing Item -->
-
-                    <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="pricing-item">
-
-                            <div class="pricing-header">
-                                <h3>Developer Plan</h3>
-                                <h4><sup>$</sup>49<span> / month</span></h4>
-                            </div>
-
-                            <ul>
-                                <li><i class="bi bi-dot"></i> <span>Quam adipiscing vitae proin</span></li>
-                                <li><i class="bi bi-dot"></i> <span>Nec feugiat nisl pretium</span></li>
-                                <li><i class="bi bi-dot"></i> <span>Nulla at volutpat diam uteera</span></li>
-                                <li><i class="bi bi-dot"></i> <span>Pharetra massa massa ultricies</span></li>
-                                <li><i class="bi bi-dot"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-                            </ul>
-
-                            <div class="text-center mt-auto">
-                                <a href="#" class="buy-btn">Buy Now</a>
-                            </div>
-
-                        </div>
-                    </div><!-- End Pricing Item -->
-
+                    <?php }?>
                 </div>
 
             </div>
