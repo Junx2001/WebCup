@@ -82,7 +82,7 @@ class BackOffice extends CI_Controller {
 			$crud->required_fields('nom','tailleMin','idLieu','idType');
             $crud->set_relation('idLieu','lieu','nom');
             $crud->set_relation('idType','typeForfait','nom');
-			$crud->set_relation_n_n('typeDonne','forfaitDetails','typeDonne','idForfait','idTypeDonne','nom');
+			$crud->set_relation_n_n('idTypeDonne','forfaitDetails','typeDonne','idForfait','idTypeDonne','nom');
 
 
 			$output = $crud->render();
@@ -122,6 +122,27 @@ class BackOffice extends CI_Controller {
 			$crud->set_language($this->session->userdata('crud_language'));
 			$crud->set_table('typeForfait');
 			$crud->set_subject('Type de Forfait');
+			$crud->required_fields('nom');
+			$crud->columns('nom');
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+	}
+
+	public function crudTypeDonne()
+	{
+		try{
+			$crud = new grocery_CRUD();
+
+			
+			$crud->set_language($this->session->userdata('crud_language'));
+			$crud->set_table('typeDonne');
+			$crud->set_subject('Type de données');
 			$crud->required_fields('nom');
 			$crud->columns('nom');
 
