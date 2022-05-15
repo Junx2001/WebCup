@@ -28,6 +28,44 @@ CREATE TABLE administrateur(
     mdp varchar(250)
 );
 
+
+CREATE TABLE typeDonne(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nom varchar(100)
+);
+
+CREATE TABLE forfaitDetails(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idForfait int,
+    idTypeDonne int
+);
+
+
+CREATE TABLE user(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email varchar(100),
+    mdp varchar(100)
+);
+
+CREATE TABLE commande (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    qte int,
+    idForfait int,
+    dateHeureCommande timestamp,
+    idUser int
+);
+
+
+
+CREATE TABLE paiement (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idCommande int,
+    dateHeurePaiement timestamp,
+    type varchar(100)
+);
+
+
+
     ALTER TABLE forfait ADD CONSTRAINT `forfait_fk`   
     FOREIGN KEY(idType) REFERENCES typeForfait (id) ON DELETE  CASCADE;  
     ALTER TABLE forfait ADD CONSTRAINT `forfait1_fk`   
@@ -38,6 +76,22 @@ CREATE TABLE administrateur(
     FOREIGN KEY(idLieu) REFERENCES lieu (id) ON DELETE  CASCADE;  
     ALTER TABLE forfait ADD CONSTRAINT `forfait3_fk`   
     FOREIGN KEY(idLieu) REFERENCES lieu (id) ON UPDATE CASCADE;  
+
+
+    ALTER TABLE forfaitDetails ADD CONSTRAINT `forfaitDetails_fk`   
+    FOREIGN KEY(idForfait) REFERENCES forfait (id) ON DELETE  CASCADE;  
+    ALTER TABLE forfaitDetails ADD CONSTRAINT `forfaitDetails1_fk`   
+    FOREIGN KEY(idTypeDonne) REFERENCES typeDonne (id) ON UPDATE CASCADE;  
+
+    ALTER TABLE commande ADD CONSTRAINT `commande_fk`   
+    FOREIGN KEY(idForfait) REFERENCES forfait (id) ON DELETE  CASCADE;  
+
+ALTER TABLE commande ADD CONSTRAINT `commande1_fk`   
+    FOREIGN KEY(idUser) REFERENCES user (id) ON DELETE  CASCADE;  
+
+    
+ALTER TABLE paiement ADD CONSTRAINT `paiement_fk`   
+    FOREIGN KEY(idCommande) REFERENCES commande (id) ON DELETE  CASCADE;  
 
 
 -- insertion de données
@@ -82,21 +136,8 @@ f.idLieu,l.longitude,l.latitude
 from forfait f join lieu l on f.idLieu = l.id join typeForfait t on t.id = f.idType
 );
 
-CREATE TABLE typeDonne(
-    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nom varchar(100)
-);
 
-CREATE TABLE forfaitDetails(
-    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    idForfait int,
-    idTypeDonne int
-);
 
-ALTER TABLE forfaitDetails ADD CONSTRAINT `forfaitDetails_fk`   
-    FOREIGN KEY(idForfait) REFERENCES forfait (id) ON DELETE  CASCADE;  
-    ALTER TABLE forfaitDetails ADD CONSTRAINT `forfaitDetails1_fk`   
-    FOREIGN KEY(idTypeDonne) REFERENCES typeDonne (id) ON UPDATE CASCADE;  
 
 
 INSERT INTO typeDonne VALUES (null,'vidéo');
@@ -156,35 +197,7 @@ INSERT INTO forfaitDetails VALUES (null, 13 ,4);
 INSERT INTO forfaitDetails VALUES (null, 14 ,4);
 INSERT INTO forfaitDetails VALUES (null, 15 ,4);
 
-CREATE TABLE user(
-    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    email varchar(100),
-    mdp varchar(100)
-);
-
-CREATE TABLE commande (
-    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    qte int,
-    idForfait int,
-    dateHeureCommande timestamp,
-    idUser int
-);
-
-ALTER TABLE commande ADD CONSTRAINT `commande_fk`   
-    FOREIGN KEY(idForfait) REFERENCES forfait (id) ON DELETE  CASCADE;  
-
-ALTER TABLE commande ADD CONSTRAINT `commande1_fk`   
-    FOREIGN KEY(idUser) REFERENCES user (id) ON DELETE  CASCADE;  
-
-CREATE TABLE paiement (
-    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    idCommande int,
-    dateHeurePaiement timestamp,
-    type varchar(100)
-);
-
-ALTER TABLE paiement ADD CONSTRAINT `paiement_fk`   
-    FOREIGN KEY(idCommande) REFERENCES commande (id) ON DELETE  CASCADE;  
 
 
-INSERT INTO user VALUES (null,'rabe@gmail.com','motdepasse');
+
+INSERT INTO user VALUES (null,'rabe@gmail.com',sha1('motdepasse'));

@@ -73,14 +73,17 @@ class BackOffice extends CI_Controller {
 			$crud->set_language($this->session->userdata('crud_language'));
             $crud->set_table('forfait');
 			$crud->set_subject('Forfait');
-			$crud->columns('nom', 'tailleMin', 'idLieu', 'idType');
+			$crud->columns('nom', 'tailleMin', 'idLieu', 'idType','idTypeDonne');
 			$crud->display_as('tailleMin', 'Stockage min');
 			$crud->display_as('idLieu', 'Lieu');
-            $crud->display_as('idType', 'Type');
-			$crud->fields('nom', 'tailleMin', 'idLieu', 'idType');
+            $crud->display_as('idType', 'TypeForfait');
+			$crud->display_as('idTypeDonne', 'TypeDonne');
+			$crud->fields('nom', 'tailleMin', 'idLieu', 'idType','idTypeDonne');
 			$crud->required_fields('nom','tailleMin','idLieu','idType');
             $crud->set_relation('idLieu','lieu','nom');
             $crud->set_relation('idType','typeForfait','nom');
+			$crud->set_relation_n_n('typeDonne','forfaitDetails','typeDonne','idForfait','idTypeDonne','nom');
+
 
 			$output = $crud->render();
 
