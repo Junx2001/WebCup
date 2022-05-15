@@ -6,10 +6,10 @@ class CommandeCtrl extends CI_Controller {
     public function __construct()
 	{
 		parent::__construct();
-        if($this->session->userdata('user')==null)
-        {
-            redirect('UserCtrl');
-        }
+        // if($this->session->userdata('user')==null)
+        // {
+        //     redirect('UserCtrl');
+        // }
 	}
 	
 	public function index(){
@@ -17,7 +17,14 @@ class CommandeCtrl extends CI_Controller {
 	}
 
     public function commanderPage(){
-        $this->load->view('fo_commande');
+        $id = $this->input->get('id');
+        $data['idforfait']=$id;
+        $forfaits = $this->input->get('forfaits');
+		$this->session->set_userdata('forfaits',$forfaits);
+		$this->load->model('Forfaits');
+		$myForfaits = $this->forfaits->getForfaitById($forfaits);
+		$data['forfais']=$myForfaits;
+        $this->load->view('fo_commande',$data);
     }
 
     public function commander()

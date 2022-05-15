@@ -1,3 +1,6 @@
+<?php
+// var_dump($forfaits);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -52,7 +55,7 @@
 
 <body>
     <style>
-    body {
+    /* body {
         background-color: #010101;
 
     }
@@ -60,7 +63,7 @@
     .hero-animated {
         background-image: url('<?php echo  site_url() ?>assets/images/front-office/background.jpg');
         background-repeat: no-repeat;
-    }
+    } */
     </style>
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top" data-scrollto-offset="0">
@@ -718,27 +721,26 @@
                 </div>
 
                 <div class="row gy-4">
-                    <?php for($i=0;$i<3;$i++){ ?>
+                    <?php for($i=0;$i<count($forfaits);$i++){ ?>
                     <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                         <div class="pricing-item" onmouseover="hover('<?php echo $i;?>')" id="featured<?php echo $i;?>"
                             onmouseleave="removehover('<?php echo $i;?>')">
 
                             <div class="pricing-header">
-                                <h3>Free Plan</h3>
-                                <h4><sup>$</sup>30<span> / month</span></h4>
+                                <h3><?php echo $forfaits[$i]['nomType']; ?></h3>
+                                <h4><sup>$</sup><?php echo $forfaits[$i]['prix']; ?><span><?php echo $forfaits[$i]['periode']; ?></span></h4>
                             </div>
 
                             <ul>
-                                <li><i class="bi bi-dot"></i> <span>Quam adipiscing vitae proin</span></li>
-                                <li><i class="bi bi-dot"></i> <span>Nec feugiat nisl pretium</span></li>
-                                <li><i class="bi bi-dot"></i> <span>Nulla at volutpat diam uteera</span></li>
-                                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span>
+                                <li><i class="bi bi-dot"></i> <span><?php echo $forfaits[$i]['tailleMin']; ?></span>  Go</li>
+                                <li><i class="bi bi-dot"></i>+<span><?php echo $forfaits[$i]['prixAdd']; ?>$ </span>&nbsp par Go en plus</li>
+                                <li><i class="bi bi-dot"></i> <span><?php echo $forfaits[$i]['typePayement']; ?></span></li>
+                                
                                 </li>
                             </ul>
 
-                            <div class="text-center mt-auto">
-                                <a href="#" class="buy-btn">Buy Now</a>
+                            <div class="text-center mt-auto"><?php echo site_url(); ?>
+                                <a href="<?php echo site_url(); ?>CommandeCtrl/commanderPage?$id=<?php echo $forfaits[$i]['id']; ?>" class="buy-btn">Buy Now</a>
                             </div>
 
                         </div>

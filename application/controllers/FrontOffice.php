@@ -10,8 +10,9 @@ class FrontOffice extends CI_Controller {
 	}
 	
 	public function index(){
-		//redirect('FrontOffice/accueil');
-		$this->load->view('index');
+		redirect('ForfaitCtrl/allForfaits');
+		
+		// $this->load->view('index',$data);
 	}
 
     public function accueil(){
@@ -23,4 +24,15 @@ class FrontOffice extends CI_Controller {
         $this->session->unset_userdata('user');
         redirect('FrontOffice/accueil');
 	}
+
+	public function formCommande(){
+		$forfaits = $this->input->get('forfaits');
+		$this->session->set_userdata('forfaits',$forfaits);
+		$this->load->model('Forfaits');
+		$myForfaits = $this->forfaits->getForfaitById($forfaits);
+		$data['forfais']=$myForfaits;
+		$this->load->view('formCommande',$data);
+	}
+
+
 }

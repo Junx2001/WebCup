@@ -16,22 +16,32 @@ class ForfaitCtrl extends CI_Controller {
     // liste tous les forfaits
     public function allForfaits(){
         $this->load->model('Forfait');
+        $forfaits = $this->Forfait->getForfaits();
+        
+
+        for( $i=0;$i<count($forfaits);$i++) {
+            if($forfaits[$i]['typePayement']=='abonnement mensuel'){
+                $forfaits[$i]['periode'] = '/mois';
+            }else{
+                $forfaits[$i]['periode'] ='';
+            }
+        }
         $data = array(
             'view' => 'listeForfait',
-            'forfaits' => $this->Forfait->getForfaits()
+            'forfaits' => $forfaits
         );
-        $this->load->view('bo_login',$data);
+        $this->load->view('fo_index',$data);
     }
 
      // fiche d'un forfait
      public function ficheForfait(){
-        $id = $this->input->get('id');
-        $this->load->model('Forfait');
-        $data = array(
-            'view' => 'ficheForfait',
-            'fiche' => $this->Forfait->getForfait($id)
-        );
-        $this->load->view('bo_login',$data);
+        // $id = $this->input->get('id');
+        // $this->load->model('Forfait');
+        // $data = array(
+        //     'view' => 'ficheForfait',
+        //     'fiche' => $this->Forfait->getForfait($id)
+        // );
+        // $this->load->view('bo_login',$data);
     }
 
     // liste des résultats de recherche
