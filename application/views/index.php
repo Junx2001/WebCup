@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>HeroBiz Bootstrap Template - Home 1</title>
+    <title>PostGen</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -69,42 +69,24 @@
             <a href="index.php" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1>HeroBiz<span>.</span></h1>
+                <h1>PostGen<span>.</span></h1>
             </a>
 
             <nav id="navbar" class="navbar">
                 <ul>
 
 
-                    <li><a class="nav-link scrollto" href="index.php">Home </a></li>
-                    <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="index.php">Accueil </a></li>
+                    <li><a class="nav-link scrollto" href="index.php#about">A Propos</a></li>
                     <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
-                    <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
-                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i
-                                class="bi bi-chevron-down dropdown-indicator"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-down dropdown-indicator"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
+                    <li><a class="nav-link scrollto" href="index.php#team">Notre équipe</a></li>
+                    
 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
 
-            <a class="btn-getstarted scrollto" href="index.php#about">Get Started</a>
+            <a class="btn-getstarted scrollto" href="index.php#about">A propos</a>
 
         </div>
     </header><!-- End Header -->
@@ -116,10 +98,10 @@
             <h2>Je suis passé <span>ICI</span></h2>
             <p>Laisse une partie de toi ici</p>
             <div class="d-flex">
-                <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+                <a href="#about" class="btn-get-started scrollto">A propos</a>
+                <a href="https://web.facebook.com/WebcupMadagascar/videos/705218867193658"
                     class="glightbox btn-watch-video d-flex align-items-center"><i
-                        class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                        class="bi bi-play-circle"></i><span>Regarder la vidéo</span></a>
             </div>
         </div>
     </section>
