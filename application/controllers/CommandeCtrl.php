@@ -19,11 +19,11 @@ class CommandeCtrl extends CI_Controller {
     public function commanderPage(){
         $id = $this->input->get('id');
         $data['idforfait']=$id;
-        $forfaits = $this->input->get('forfaits');
+        $forfaits = $this->input->get('id');
 		$this->session->set_userdata('forfaits',$forfaits);
-		$this->load->model('Forfaits');
-		$myForfaits = $this->forfaits->getForfaitById($forfaits);
-		$data['forfais']=$myForfaits;
+		$this->load->model('Forfait');
+		$myForfaits = $this->Forfait->getForfaitById($id);
+		$data['forfaits']=$myForfaits;
         $this->load->view('fo_commande',$data);
     }
 

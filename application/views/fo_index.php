@@ -722,7 +722,7 @@
                             </ul>
 
                             <div class="text-center mt-auto"><?php echo site_url(); ?>
-                                <a href="<?php echo site_url(); ?>CommandeCtrl/commanderPage?$id=<?php echo $forfaits[$i]['id']; ?>" class="buy-btn">Buy Now</a>
+                                <a href="<?php echo site_url(); ?>CommandeCtrl/commanderPage?id=<?php echo $forfaits[$i]['id']; ?>" class="buy-btn">Buy Now</a>
                             </div>
 
                         </div>

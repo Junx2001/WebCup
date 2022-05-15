@@ -6,6 +6,7 @@ class Forfait extends CI_Model{
         $sql=sprintf($sql,$id);
         $query = $this->db->query($sql);
         $row = $query -> result_array();
+        var_dump($id);
         return $row[0];
     }
 
