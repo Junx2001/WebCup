@@ -36,10 +36,12 @@ class BackOffice extends CI_Controller {
 		
 		$this->lang->load('backoffice', $language);
 		$sidebar = $this->lang->line('sidebar');
+		$menu = $this->lang->line('option');
         $data = array(
 			'view' => 'bo_crud',
 			'crud' => (array)$output,
-			'sidebarTranslated' =>$sidebar
+			'sidebarTranslated' =>$sidebar,
+			'menuTranslated' =>$menu
 		);
 
 		$this->load->view('bo_template.php',$data);
