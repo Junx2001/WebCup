@@ -25,3 +25,13 @@ $lang['sidebar'] = '<li class="submenu-item">
 <a href="'.site_url('BackOffice/CrudTypeDonne').'">tipo de datos</a>
 </li>';
 
+
+$lang['option'] = '<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+<li>
+    <h6 class="dropdown-header">Hola, Administrador!</h6>
+</li>
+<li>
+    <hr class="dropdown-divider">
+</li>
+<li><a class="dropdown-item" href="'.site_url('BackOffice/logout').'"><i class="icon-mid bi bi-box-arrow-left me-2"></i>Desconectando</a></li>
+</ul>';

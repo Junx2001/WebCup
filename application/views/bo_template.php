@@ -93,7 +93,7 @@ if (empty($view)) {
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                                 <li class="nav-item dropdown me-3 mb-3">
                                     <a class="nav-link active dropdown-toggle show text-gray-600" href="#" data-bs-toggle="dropdown" aria-expanded="true">
-                                        <?php echo $this->session->userdata('bo_language'); ?> <i class="bi bi-flag bi-sub fs-4 "></i>
+                                        <?php echo strtoupper($this->session->userdata('bo_language')); ?> <i class="bi bi-flag bi-sub fs-4 "></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                         <li>
@@ -122,15 +122,9 @@ if (empty($view)) {
                                         </div>
                                     </div>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                    <li>
-                                        <h6 class="dropdown-header">Bonjour, Admin!</h6>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="<?php echo site_url(); ?>BackOffice/logout"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Déconnexion</a></li>
-                                </ul>
+
+
+                                <?php echo $menuTranslated; ?>
                             </div>
                         </div>
                     </div>
