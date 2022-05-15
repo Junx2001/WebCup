@@ -10,7 +10,8 @@ class FrontOffice extends CI_Controller {
 	}
 	
 	public function index(){
-		redirect('FrontOffice/accueil');
+		//redirect('FrontOffice/accueil');
+		$this->load->view('index');
 	}
 
     public function accueil(){
